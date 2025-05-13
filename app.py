@@ -26,7 +26,9 @@ st.markdown("""
 # Title and description
 st.title('🌱 Sensores de temperatura y humedad de mi invernadero')
 st.markdown("""
-    Desde esta interfaz podrás verificar el índice de humedad y temperatura de tu invernadero
+    Desde esta interfaz podrás verificar el índice de humedad y temperatura de tu invernadero.
+
+    🚨 Utiliza el interruptor para activar y desactivar el sistema
 """)
 
 # Create map data for EAFIT
