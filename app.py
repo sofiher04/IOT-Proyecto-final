@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Page configuration
 st.set_page_config(
-    page_title="Análisis de humedad y temperatura de mi invernadero",
+    page_title="Sensores de temperatura y humedad de mi invernadero",
     page_icon="🌱",
     layout="wide"
 )
@@ -24,10 +24,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title and description
-st.title('📊 Análisis de datos de Sensores en Mi Ciudad')
+st.title('🌱 Sensores de temperatura y humedad de mi invernadero')
 st.markdown("""
-    Esta aplicación permite analizar datos de temperatura y humedad
-    recolectados por sensores ESP32 en diferentes puntos de la ciudad.
+    Desde esta interfaz podrás verificar el índice de humedad y temperatura de tu invernadero
 """)
 
 # Create map data for EAFIT
