@@ -10,14 +10,6 @@ st.set_page_config(
     page_icon="🌱",
     layout="wide"
 )
-# Imagen de invernadero
-st.markdown(
-    """
-    <div style="position: fixed; top: 100px; right: 20px; z-index: 1000;">
-        <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
-    </div>
-    """,
-    unsafe_allow_html=True)
 
 # Custom CSS
 st.markdown("""
