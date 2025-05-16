@@ -32,7 +32,7 @@ def pil_to_b64(img):
     return base64.b64encode(buffer.getvalue()).decode()
 
 # Convertir ambas imágenes a base64
-img_left_b64 = pil_to_b64(img_left)
+img_left_b64 = pil_to_b64(img_center)
 img_right_b64 = pil_to_b64(img_right)
 
 # Mostrar ambas imágenes alineadas horizontalmente
