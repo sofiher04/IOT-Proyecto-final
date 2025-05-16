@@ -37,7 +37,7 @@ eafit_location = pd.DataFrame({
     'lon': [-75.5783],
     'location': ['Universidad EAFIT']
 })
-)
+
 
 
 # Display map
