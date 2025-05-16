@@ -38,6 +38,17 @@ eafit_location = pd.DataFrame({
     'location': ['Universidad EAFIT']
 })
 
+# Imagen de invernadero
+st.markdown(
+    """
+    <div style="position: fixed; top: 100px; right: 20px; z-index: 1000;">
+        <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Display map
 st.subheader("📍 Ubicación de los Sensores - Universidad EAFIT")
 st.map(eafit_location, zoom=15)
