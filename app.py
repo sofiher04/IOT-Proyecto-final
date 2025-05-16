@@ -18,7 +18,7 @@ st.title('🌱 Sensores de temperatura y humedad de mi invernadero')
 st.markdown("""
     Desde esta interfaz podrás verificar el índice de humedad y temperatura de tu invernadero.
 
-    🚨 Utiliza el interruptor para activar y desactivar el sistema
+    🚨 Selecciona la forma de visualización que prefieras
 """)
 
 # Cargar imágenes en el nuevo orden: izquierda, centro, derecha
