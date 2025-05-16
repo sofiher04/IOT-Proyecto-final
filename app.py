@@ -21,9 +21,9 @@ st.markdown("""
     🚨 Utiliza el interruptor para activar y desactivar el sistema
 """)
 
-# Cargar imágenes
-img_left = Image.open("varias-plantas-que-crecen-en-invernadero.jpg")
-img_center = Image.open("interior-de-invernadero.jpeg")
+# Cargar imágenes en el nuevo orden: izquierda, centro, derecha
+img_left = Image.open("interior-de-invernadero.jpg")
+img_center = Image.open("varias-plantas-que-crecen-en-invernadero.jpg")
 img_right = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
 # Función para convertir imagen a base64
@@ -32,12 +32,12 @@ def pil_to_b64(img):
     img.save(buffer, format="JPEG")
     return base64.b64encode(buffer.getvalue()).decode()
 
-# Convertir todas las imágenes a base64
+# Convertir imágenes a base64
 img_left_b64 = pil_to_b64(img_left)
 img_center_b64 = pil_to_b64(img_center)
 img_right_b64 = pil_to_b64(img_right)
 
-# Mostrar tres imágenes alineadas horizontalmente
+# Mostrar las tres imágenes alineadas horizontalmente
 st.markdown(
     f"""
     <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 2rem 0;">
@@ -48,6 +48,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
