@@ -26,7 +26,33 @@ eafit_location = pd.DataFrame({
     'location': ['Universidad EAFIT']
 })
 
+# Cargar la imagen
+image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
+# CSS para alinear la imagen a la derecha
+st.markdown(
+    """
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .image-container img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Contenedor de imagen alineado a la derecha
+with st.container():
+    st.markdown('<div class="image-container">', unsafe_allow_html=True)
+    st.image(image, width=300)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # Display map
 st.subheader("📍 Ubicación de los Sensores - Universidad EAFIT")
