@@ -11,6 +11,17 @@ st.set_page_config(
     layout="wide"
 )
 
+# Imagen alineada al borde derecho
+st.markdown(
+    """
+    <div style="position: fixed; top: 100px; right: 20px; z-index: 1000;">
+        <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Custom CSS
 st.markdown("""
     <style>
