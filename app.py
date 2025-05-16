@@ -23,6 +23,7 @@ st.markdown("""
 
 # Cargar imágenes
 img_left = Image.open("varias-plantas-que-crecen-en-invernadero.jpg")
+img_center = Image.open("interior-de-invernadero.jpeg")
 img_right = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
 # Función para convertir imagen a base64
@@ -31,16 +32,18 @@ def pil_to_b64(img):
     img.save(buffer, format="JPEG")
     return base64.b64encode(buffer.getvalue()).decode()
 
-# Convertir ambas imágenes a base64
+# Convertir todas las imágenes a base64
 img_left_b64 = pil_to_b64(img_left)
+img_center_b64 = pil_to_b64(img_center)
 img_right_b64 = pil_to_b64(img_right)
 
-# Mostrar ambas imágenes alineadas horizontalmente
+# Mostrar tres imágenes alineadas horizontalmente
 st.markdown(
     f"""
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin: 2rem 0;">
-        <img src="data:image/jpeg;base64,{img_left_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
-        <img src="data:image/jpeg;base64,{img_right_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+    <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 2rem 0;">
+        <img src="data:image/jpeg;base64,{img_left_b64}" width="280" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+        <img src="data:image/jpeg;base64,{img_center_b64}" width="280" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+        <img src="data:image/jpeg;base64,{img_right_b64}" width="280" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
     </div>
     """,
     unsafe_allow_html=True
