@@ -14,7 +14,7 @@ st.set_page_config(
 # Imagen alineada al borde derecho
 st.markdown(
     """
-    <div style="position: fixed; top: 100px; right: 20px; z-index: 1000;">
+    <div style="position: fixed; top: 100px; right: 200px; z-index: 100;">
         <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
     </div>
     """,
