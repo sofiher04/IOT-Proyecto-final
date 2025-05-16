@@ -46,11 +46,6 @@ eafit_location = pd.DataFrame({
     'location': ['Universidad EAFIT']
 })
 
-# Contenedor de imagen alineado a la derecha
-with st.container():
-    st.markdown('<div class="image-container">', unsafe_allow_html=True)
-    st.image(image, width=300)
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Display map
 st.subheader("📍 Ubicación de los Sensores - Universidad EAFIT")
