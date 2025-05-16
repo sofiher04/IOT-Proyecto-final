@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
+import base64
 from PIL import Image
+from io import BytesIO
 import numpy as np
 from datetime import datetime
 
@@ -29,21 +31,17 @@ eafit_location = pd.DataFrame({
 # Cargar la imagen
 image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
-# CSS para alinear la imagen a la derecha
+# Convertir a base64 para incrustar en HTML
+buffered = BytesIO()
+image.save(buffered, format="JPEG")
+img_b64 = base64.b64encode(buffered.getvalue()).decode()
+
+# Mostrar imagen con estilo alineado a la derecha
 st.markdown(
-    """
-    <style>
-        .image-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-        .image-container img {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-    </style>
+    f"""
+    <div style="display: flex; justify-content: flex-end; margin-top: 2rem; margin-bottom: 2rem;">
+        <img src="data:image/jpeg;base64,{img_b64}" alt="Imagen" width="300" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    </div>
     """,
     unsafe_allow_html=True
 )
