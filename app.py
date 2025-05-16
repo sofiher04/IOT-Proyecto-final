@@ -39,7 +39,7 @@ st.markdown("""
         padding: 2rem;
     }
     .stAlert {
-        margin-top: 1rem;
+        margin-top: 6rem;
     }
     </style>
 """, unsafe_allow_html=True)
