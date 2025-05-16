@@ -21,23 +21,31 @@ st.markdown("""
     🚨 Utiliza el interruptor para activar y desactivar el sistema
 """)
 
-# Cargar imagen
-image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
+# Cargar imágenes
+img_left = Image.open("varias-plantas-que-crecen-en-invernadero.jpg")
+img_right = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
-# Convertir a base64
-buffered = BytesIO()
-image.save(buffered, format="JPEG")
-img_b64 = base64.b64encode(buffered.getvalue()).decode()
+# Función para convertir imagen a base64
+def pil_to_b64(img):
+    buffer = BytesIO()
+    img.save(buffer, format="JPEG")
+    return base64.b64encode(buffer.getvalue()).decode()
 
-# Imagen alineada a la derecha con HTML + CSS
+# Convertir ambas imágenes a base64
+img_left_b64 = pil_to_b64(img_left)
+img_right_b64 = pil_to_b64(img_right)
+
+# Mostrar ambas imágenes alineadas horizontalmente
 st.markdown(
     f"""
-    <div style="width: 100%; display: flex; justify-content: flex-end; margin: 1rem 0;">
-        <img src="data:image/jpeg;base64,{img_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin: 2rem 0;">
+        <img src="data:image/jpeg;base64,{img_left_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+        <img src="data:image/jpeg;base64,{img_right_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 # Create map data for EAFIT
 eafit_location = pd.DataFrame({
