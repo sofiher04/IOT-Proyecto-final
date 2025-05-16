@@ -47,6 +47,7 @@ st.markdown(
 )
 
 
+
 # Create map data for EAFIT
 eafit_location = pd.DataFrame({
     'lat': [6.2006],
