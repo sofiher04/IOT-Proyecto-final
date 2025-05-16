@@ -10,16 +10,26 @@ st.set_page_config(
     page_icon="🌱",
     layout="wide"
 )
+ #Invernadero
+image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
 
-# Imagen alineada al borde derecho
 st.markdown(
     """
-    <div style="position: fixed; top: 100px; right: 200px; z-index: 100;">
-        <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
-    </div>
+    <style>
+        .image-right {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -100px;
+            margin-bottom: 30px;
+        }
+    </style>
     """,
     unsafe_allow_html=True
 )
+
+st.markdown('<div class="image-right">', unsafe_allow_html=True)
+st.image(image, width=300)
+st.markdown('</div>', unsafe_allow_html=True)
 
 
 # Custom CSS
