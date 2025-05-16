@@ -10,39 +10,6 @@ st.set_page_config(
     page_icon="🌱",
     layout="wide"
 )
- #Invernadero
-image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
-
-st.markdown(
-    """
-    <style>
-        .image-right {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: -100px;
-            margin-bottom: 30px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown('<div class="image-right">', unsafe_allow_html=True)
-st.image(image, width=300)
-st.markdown('</div>', unsafe_allow_html=True)
-
-
-# Custom CSS
-st.markdown("""
-    <style>
-    .main {
-        padding: 2rem;
-    }
-    .stAlert {
-        margin-top: 6rem;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 # Title and description
 st.title('🌱 Sensores de temperatura y humedad de mi invernadero')
