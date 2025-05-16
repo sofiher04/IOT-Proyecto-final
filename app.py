@@ -17,7 +17,7 @@ st.markdown(
         <img src="Chicago's Garfield Park Conservatory.jpeg" width="300" style="border-radius: 10px;">
     </div>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True)
 
 # Custom CSS
 st.markdown("""
