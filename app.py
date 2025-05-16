@@ -21,30 +21,30 @@ st.markdown("""
     🚨 Utiliza el interruptor para activar y desactivar el sistema
 """)
 
+# Cargar imagen
+image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
+
+# Convertir a base64
+buffered = BytesIO()
+image.save(buffered, format="JPEG")
+img_b64 = base64.b64encode(buffered.getvalue()).decode()
+
+# Imagen alineada a la derecha con HTML + CSS
+st.markdown(
+    f"""
+    <div style="width: 100%; display: flex; justify-content: flex-end; margin: 1rem 0;">
+        <img src="data:image/jpeg;base64,{img_b64}" width="300" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # Create map data for EAFIT
 eafit_location = pd.DataFrame({
     'lat': [6.2006],
     'lon': [-75.5783],
     'location': ['Universidad EAFIT']
 })
-
-# Cargar la imagen
-image = Image.open("Chicago's Garfield Park Conservatory.jpeg")
-
-# Convertir a base64 para incrustar en HTML
-buffered = BytesIO()
-image.save(buffered, format="JPEG")
-img_b64 = base64.b64encode(buffered.getvalue()).decode()
-
-# Mostrar imagen con estilo alineado a la derecha
-st.markdown(
-    f"""
-    <div style="display: flex; justify-content: flex-end; margin-top: 2rem; margin-bottom: 2rem;">
-        <img src="data:image/jpeg;base64,{img_b64}" alt="Imagen" width="300" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 # Contenedor de imagen alineado a la derecha
 with st.container():
